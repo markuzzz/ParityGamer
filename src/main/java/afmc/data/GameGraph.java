@@ -13,35 +13,46 @@ import java.util.Set;
  * @author Mark
  */
 public class GameGraph {
-    private State[] states;
+    private Node[] nodes;
 
-    public GameGraph(Integer numStates)
+    public GameGraph(Integer numNodes)
     {
-        states = new State[numStates];
+        nodes = new Node[numNodes+1];
         
-        for(Integer i = 0; i < numStates; i++) {
-            states[i] = new State();
+        for(Integer i = 0; i < numNodes+1; i++) {
+            nodes[i] = new Node();
         }
     }
     
-    public State getState(int stateNumber)
+    public Node getNode(int nodeNumber)
     {
-        return this.states[stateNumber];
+        return this.nodes[nodeNumber];
     }
     
-    public Integer getNumberOfStates()
+    public Integer getNumberOfNodes()
     {
-        return this.states.length;
+        return this.nodes.length;
     }
     
-    public Set<Integer> getAllStates()
+    public Set<Integer> getAllNodes()
     {
         Set<Integer> result = new HashSet();
         
-        for(Integer i = 0; i < states.length; i++) {
+        for(Integer i = 0; i < nodes.length; i++) {
             result.add(i);
         }
         
+        return result;
+    }
+    
+    @Override
+    public String toString()
+    {
+        String result = "";
+        for(Integer i = 0; i < this.nodes.length; i++) {
+            result = result+" Node("+i+")"+this.nodes[i].toString()+"\n";
+        }
+
         return result;
     }
 
