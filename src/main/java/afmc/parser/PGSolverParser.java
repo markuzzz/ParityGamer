@@ -29,8 +29,11 @@ public class PGSolverParser {
         int numberOfStates = Integer.parseInt(values[1]);
 
         GameGraph graph = new GameGraph(numberOfStates);
+        int highestPrioritySeen = 0;
 
+        //go through file line by line
         while (scanner.hasNextLine()) {
+            //extract information and set the values in the nodes
             values = this.parseLine(scanner.nextLine());
             int identifier = Integer.parseInt(values[0]);
             int priority = Integer.parseInt(values[1]);
@@ -41,19 +44,25 @@ public class PGSolverParser {
             Node node = graph.getNode(identifier);
             node.even = isEven;
             node.priority = priority;
+            
             node.clearTransitions();
             for(Integer suc: successors) {
                 node.addTransition(suc);
             }
+            
             if(values.length == 5) {
                 String name = values[4];
                 // Strip the quotes from the name
                 name = name.substring(1, name.length()-1);
                 node.name = name;
             }
+            
+            if(priority > highestPrioritySeen) {
+                highestPrioritySeen = priority;
+            }
         }
         scanner.close();
-
+        graph.initializeProgressMeasures(highestPrioritySeen);
         return graph;
     }
 

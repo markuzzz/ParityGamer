@@ -26,7 +26,7 @@ public class App {
             break;
         default:
             System.out.println("Incorrect arguments provided.");
-            System.out.println("usage: (-t (naive/emersonlei))? <game>");
+            System.out.println("usage: (-t technique)? <game>");
             return;
         }
 
@@ -41,6 +41,7 @@ public class App {
 
         // Parse the pgsolver file
         GameGraph game = (new PGSolverParser()).parse(pgsolver);
+        Checker checker = new Checker(game);
         System.out.println(game.toString());
 
         return;

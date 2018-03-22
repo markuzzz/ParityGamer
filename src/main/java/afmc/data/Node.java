@@ -12,6 +12,7 @@ public class Node
     public boolean even;
     public Integer priority;
     public String name;
+    public Integer[] progressMeasure;
 
     public Node()
     {
@@ -52,6 +53,11 @@ public class Node
         result += " successors ";
         for (Transition t: this.transitions) {
             result = result +t.getTo() +",";
+        }
+        
+        result += "progress measure: ";
+        for (int i = 0; i < this.progressMeasure.length; i++) {
+            result += this.progressMeasure[i] + ",";
         }
 
         return result; 
