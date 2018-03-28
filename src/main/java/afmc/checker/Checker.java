@@ -2,6 +2,8 @@ package afmc.checker;
 
 import afmc.data.GameGraph;
 import afmc.data.Node;
+import afmc.data.ProgressMeasure;
+import afmc.data.Transition;
 
 public class Checker {
     GameGraph game;
@@ -38,10 +40,27 @@ public class Checker {
         boolean fixedPointReached = false;
         
         while(!fixedPointReached) {
-            //do lift and check whether something changed
+            if (node.even) {
+                ProgressMeasure.min(progSuccesors(node));
+            } else {
+                ProgressMeasure.max(progSuccesors(node));
+            }
         }
         
         return changed;
+    }
+    
+    private ProgressMeasure[] progSuccesors(Node node) {
+        ProgressMeasure[] result = new ProgressMeasure[node.transitions.size()];
+        for(int i = 0; i < node.transitions.size(); i++) {
+            Node succNode = game.getNode(node.transitions.get(i).getTo());
+            if(node.priority % 2 == 0) {
+                
+            } else {
+                
+            }
+        }
+        return result;
     }
     
     //Computes and sets the max possible progress measure (counts occurence of priorities in graph)

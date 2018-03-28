@@ -8,11 +8,11 @@ import java.util.*;
  */
 public class Node
 {
-    List<Transition> transitions;
+    public List<Transition> transitions;
     public boolean even;
     public Integer priority;
     public String name;
-    public Integer[] progressMeasure;
+    public ProgressMeasure progressMeasure;
 
     public Node()
     {
@@ -56,9 +56,7 @@ public class Node
         }
         
         result += "progress measure: ";
-        for (int i = 0; i < this.progressMeasure.length; i++) {
-            result += this.progressMeasure[i] + ",";
-        }
+        result += this.progressMeasure.toString();
 
         return result; 
     }

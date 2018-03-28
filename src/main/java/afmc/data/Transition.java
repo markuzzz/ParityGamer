@@ -1,6 +1,6 @@
 package afmc.data;
 
-class Transition
+public class Transition
 {
     private Integer to;
 
