@@ -11,7 +11,7 @@ public class Node
     public List<Transition> transitions;
     public boolean even;
     public Integer priority;
-    public String name;
+    public String name = "";
     public ProgressMeasure progressMeasure;
 
     public Node()
@@ -47,7 +47,7 @@ public class Node
     @Override
     public String toString()
     {
-        String result = "";
+        String result = this.name;
         if(this.even) {
             result += " even ";
         } else {

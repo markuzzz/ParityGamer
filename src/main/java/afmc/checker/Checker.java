@@ -84,6 +84,7 @@ public class Checker {
         
         for(Integer nodeIndex: game.getAllNodes()) {
             Node node = game.getNode(nodeIndex);
+            System.out.println(node);
             if(node.priority % 2 == 1) {
                 tempMaxProgressMeasure[node.priority]++;
             }
