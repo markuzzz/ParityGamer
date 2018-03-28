@@ -112,25 +112,29 @@ public class ProgressMeasure {
     }
 
     public static boolean isSmallerThanOrEqual(ProgressMeasure pm1, ProgressMeasure pm2, Integer upTo) {
+        if(pm1.top) {return false;}
+        if(pm2.top) {return true;}
         for(int i = 0; i < upTo; i++) {
-                if(pm1.progressMeasure[i] > pm2.progressMeasure[i]) {
-                    return false;
-                }
-                if(pm1.progressMeasure[i] < pm2.progressMeasure[i]) {
-                    return true;
-                }
+            if(pm1.progressMeasure[i] > pm2.progressMeasure[i]) {
+                return false;
+            }
+            if(pm1.progressMeasure[i] < pm2.progressMeasure[i]) {
+                return true;
+            }
         }
         return true;
     }
 
     public static boolean isLargerThanOrEqual(ProgressMeasure pm1, ProgressMeasure pm2, Integer upTo) {
+        if(pm1.top) {return true;}
+        if(pm2.top) {return false;}
         for(int i = 0; i < upTo; i++) {
-                if(pm1.progressMeasure[i] < pm2.progressMeasure[i]) {
-                    return false;
-                }
-                if(pm1.progressMeasure[i] > pm2.progressMeasure[i]) {
-                    return true;
-                }
+            if(pm1.progressMeasure[i] < pm2.progressMeasure[i]) {
+                return false;
+            }
+            if(pm1.progressMeasure[i] > pm2.progressMeasure[i]) {
+                return true;
+            }
         }
         return true;
     }
