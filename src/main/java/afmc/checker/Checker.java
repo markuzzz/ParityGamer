@@ -40,10 +40,21 @@ public class Checker {
         boolean fixedPointReached = false;
         
         while(!fixedPointReached) {
+            fixedPointReached = true;
             if (node.even) {
-                changed = node.updateProgressMeasure(ProgressMeasure.leastEqual(ProgressMeasure.min(progSuccesors(node)),node.priority));
+                ProgressMeasure min = ProgressMeasure.min(progSuccesors(node));
+                if (min != node.progressMeasure) {
+                    fixedPointReached = false;
+                    node.updateProgressMeasure(min);
+                    changed = true;
+                }
             } else {
-                changed = node.updateProgressMeasure(ProgressMeasure.leastGreater(ProgressMeasure.max(progSuccesors(node)),node.priority, this.maxProgressMeasure));
+                ProgressMeasure max = ProgressMeasure.max(progSuccesors(node));
+                if (max != node.progressMeasure) {
+                    fixedPointReached = false;
+                    node.updateProgressMeasure(max);
+                    changed = true;
+                }
             }
         }
         
@@ -52,12 +63,12 @@ public class Checker {
     
     private ProgressMeasure[] progSuccesors(Node node) {
         ProgressMeasure[] result = new ProgressMeasure[node.transitions.size()];
-        for(int i = 0; i < node.transitions.size(); i++) {
+        for (int i = 0; i < node.transitions.size(); i++) {
             Node succNode = game.getNode(node.transitions.get(i).getTo());
-            if(node.priority % 2 == 0) {
-                
+            if (node.priority % 2 == 0) {
+                result[i] = ProgressMeasure.leastEqual(node.progressMeasure, node.priority);
             } else {
-                
+                result[i] = ProgressMeasure.leastGreater(node.progressMeasure, node.priority, this.maxProgressMeasure);
             }
         }
         return result;

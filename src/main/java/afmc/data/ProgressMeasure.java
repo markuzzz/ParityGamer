@@ -30,6 +30,10 @@ public class ProgressMeasure {
         this.top = true;
     }
 
+    public boolean isTop() {
+        return this.top;
+    }
+
     public String toString() {
         String result = "";
 
@@ -134,6 +138,21 @@ public class ProgressMeasure {
             }
             if(pm1.progressMeasure[i] > pm2.progressMeasure[i]) {
                 return true;
+            }
+        }
+        return true;
+    }
+
+    public static boolean isEqual(ProgressMeasure pm1, ProgressMeasure pm2) {
+        if (pm1.isTop() && pm2.isTop()) {
+            return true;
+        } else if (pm1.isTop() || pm2.isTop()) {
+            return false; 
+        }
+
+        for (int i = 0; i < pm1.length; i++) {
+            if(pm1.progressMeasure[i] != pm2.progressMeasure[i]) {
+                return false;
             }
         }
         return true;
