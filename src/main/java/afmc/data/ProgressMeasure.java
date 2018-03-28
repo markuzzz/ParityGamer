@@ -7,7 +7,7 @@ public class ProgressMeasure {
     
     public ProgressMeasure(Integer length) {
         this.progressMeasure = new Integer[length];
-        for(Integer j = 0; j < length + 1; j++) {
+        for(Integer j = 0; j < length; j++) {
             this.progressMeasure[j] = 0;
         }
         this.length = length;
