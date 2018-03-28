@@ -81,7 +81,7 @@ public class ProgressMeasure {
     public static ProgressMeasure leastEqual(ProgressMeasure pm, Integer upTo) {
         ProgressMeasure result = new ProgressMeasure(pm.length);
 
-        for (int i = 0; i < upTo; i++) {
+        for (int i = 0; i <= upTo; i++) {
             result.updateProgress(i, pm.getProgress(i));
         }
 
@@ -90,14 +90,15 @@ public class ProgressMeasure {
 
     public static ProgressMeasure leastGreater(ProgressMeasure pm, Integer upTo, ProgressMeasure max) {
         ProgressMeasure leastEqual = leastEqual(pm, upTo);
+        ProgressMeasure increased =  increaseProgress(leastEqual, max, upTo);
 
-        return increaseProgress(leastEqual, max);
+        return increased;
     }
 
-    private static ProgressMeasure increaseProgress(ProgressMeasure pm, ProgressMeasure max) {
+    private static ProgressMeasure increaseProgress(ProgressMeasure pm, ProgressMeasure max, Integer upTo) {
         boolean shouldUpdate = true;
-        for (int i = pm.length-1; i > 0; i--) {
-            if (0 == i%2) {
+        for (int i = upTo; i > 0; i--) {
+            if (0 == i % 2) {
                 continue;
             }
 
