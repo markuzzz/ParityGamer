@@ -43,14 +43,14 @@ public class Checker {
             fixedPointReached = true;
             if (node.even) {
                 ProgressMeasure min = ProgressMeasure.min(progSuccesors(node));
-                if (min != node.progressMeasure) {
+                if (!ProgressMeasure.isEqual(min, node.progressMeasure)) {
                     fixedPointReached = false;
                     node.updateProgressMeasure(min);
                     changed = true;
                 }
             } else {
                 ProgressMeasure max = ProgressMeasure.max(progSuccesors(node));
-                if (max != node.progressMeasure) {
+                if (!ProgressMeasure.isEqual(max, node.progressMeasure)) {
                     fixedPointReached = false;
                     node.updateProgressMeasure(max);
                     changed = true;
