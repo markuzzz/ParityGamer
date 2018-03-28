@@ -44,6 +44,10 @@ public class App {
         Checker checker = new Checker(game);
         System.out.println(game.toString());
 
+        checker.check("arbitrary");
+
+        System.out.println(game.toString());
+
         return;
     }
 

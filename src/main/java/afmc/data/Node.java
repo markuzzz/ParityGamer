@@ -28,6 +28,15 @@ public class Node
     {
         this.transitions.clear();
     }
+
+    public boolean updateProgressMeasure(ProgressMeasure measure) {
+        if (this.progressMeasure == measure) {
+            return false;
+        } 
+        this.progressMeasure = measure; 
+
+        return true;
+    }
     
     Set getSuccessors(String label)
     {

@@ -7,7 +7,7 @@ import afmc.data.Transition;
 
 public class Checker {
     GameGraph game;
-    Integer[] maxProgressMeasure;
+    ProgressMeasure maxProgressMeasure;
     String liftingTechnique;
     
     public Checker(GameGraph game) {
@@ -15,7 +15,7 @@ public class Checker {
         computeMaxProgressMeasure();
     }
     
-    public void check(GameGraph game, String liftingTechnique) {
+    public void check(String liftingTechnique) {
         this.liftingTechnique = liftingTechnique;
         boolean fixedPointReached = false;
         
@@ -24,8 +24,8 @@ public class Checker {
             fixedPointReached = true;
             
             //Check for every node if it can be lifted
-            for(Integer nodeIndex: game.getAllNodes()) { //note: in future choose order, for now this suffices
-                Node node = game.getNode(nodeIndex);
+            for(Integer nodeIndex: this.game.getAllNodes()) { //note: in future choose order, for now this suffices
+                Node node = this.game.getNode(nodeIndex);
                 boolean nodeChange = lift(node);
                 if(nodeChange) {fixedPointReached = false;}
             }
@@ -35,15 +35,15 @@ public class Checker {
     /* Repeatedly lifts the progress measure of a node until it can no longer be
      * lifted. Returns whether at least one lift was possible.
     */
-    private boolean lift(Node node){
+    private boolean lift(Node node) {
         boolean changed = false;
         boolean fixedPointReached = false;
         
         while(!fixedPointReached) {
             if (node.even) {
-                ProgressMeasure.min(progSuccesors(node));
+                changed = node.updateProgressMeasure(ProgressMeasure.leastEqual(ProgressMeasure.min(progSuccesors(node)),node.priority));
             } else {
-                ProgressMeasure.max(progSuccesors(node));
+                changed = node.updateProgressMeasure(ProgressMeasure.leastGreater(ProgressMeasure.max(progSuccesors(node)),node.priority, this.maxProgressMeasure));
             }
         }
         
@@ -78,6 +78,6 @@ public class Checker {
             }
         }
         
-        this.maxProgressMeasure = tempMaxProgressMeasure;
+        this.maxProgressMeasure = new ProgressMeasure(tempMaxProgressMeasure);
     }
 }
