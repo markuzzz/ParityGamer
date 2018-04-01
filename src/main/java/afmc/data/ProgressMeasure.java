@@ -18,6 +18,18 @@ public class ProgressMeasure {
         this.length = progressMeasure.length;
     }
 
+    public ProgressMeasure(ProgressMeasure pm) {
+        if (pm.isTop()) {
+            this.top = true;
+        } else {
+            this.progressMeasure = pm.getProgressMeasure();
+        }
+    }
+
+    public Integer[] getProgressMeasure() {
+        return this.progressMeasure;
+    }
+
     public Integer getProgress(Integer index) {
         return this.progressMeasure[index];
     }
@@ -79,6 +91,10 @@ public class ProgressMeasure {
     }
 
     public static ProgressMeasure leastEqual(ProgressMeasure pm, Integer upTo) {
+        // Top has the lowest order
+        if (pm.isTop()) {
+            return new ProgressMeasure(pm);
+        }
         ProgressMeasure result = new ProgressMeasure(pm.length);
 
         for (int i = 0; i <= upTo; i++) {
@@ -90,12 +106,16 @@ public class ProgressMeasure {
 
     public static ProgressMeasure leastGreater(ProgressMeasure pm, Integer upTo, ProgressMeasure max) {
         ProgressMeasure leastEqual = leastEqual(pm, upTo);
-        ProgressMeasure increased =  increaseProgress(leastEqual, max, upTo);
+        ProgressMeasure increased = increaseProgress(leastEqual, max, upTo);
 
         return increased;
     }
 
     private static ProgressMeasure increaseProgress(ProgressMeasure pm, ProgressMeasure max, Integer upTo) {
+        if (pm.isTop()) {
+            return pm;
+        }
+
         boolean shouldUpdate = true;
         for (int i = upTo; i > 0; i--) {
             if (0 == i % 2) {

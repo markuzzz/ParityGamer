@@ -1,5 +1,7 @@
 package afmc.checker;
 
+import java.util.Arrays;
+
 import afmc.data.GameGraph;
 import afmc.data.Node;
 import afmc.data.ProgressMeasure;
@@ -18,16 +20,24 @@ public class Checker {
     public void check(String liftingTechnique) {
         this.liftingTechnique = liftingTechnique;
         boolean fixedPointReached = false;
+
+        int iteration = 0;
         
         //Until no node can be lifted we do not stop
         while(!fixedPointReached) {
             fixedPointReached = true;
+
+            //System.out.println(this.game);
+            //System.out.println("Iteration: "+iteration);
+            iteration++;
             
             //Check for every node if it can be lifted
             for(Integer nodeIndex: this.game.getAllNodes()) { //note: in future choose order, for now this suffices
                 Node node = this.game.getNode(nodeIndex);
                 boolean nodeChange = lift(node);
-                if(nodeChange) {fixedPointReached = false;}
+                if(nodeChange) {
+                    fixedPointReached = false;
+                }
             }
         }
     }
@@ -66,11 +76,12 @@ public class Checker {
         for (int i = 0; i < node.transitions.size(); i++) {
             Node succNode = game.getNode(node.transitions.get(i).getTo());
             if (node.priority % 2 == 0) {
-                result[i] = ProgressMeasure.leastEqual(node.progressMeasure, node.priority);
+                result[i] = ProgressMeasure.leastEqual(succNode.progressMeasure, node.priority);
             } else {
-                result[i] = ProgressMeasure.leastGreater(node.progressMeasure, node.priority, this.maxProgressMeasure);
+                result[i] = ProgressMeasure.leastGreater(succNode.progressMeasure, node.priority, this.maxProgressMeasure);
             }
         }
+
         return result;
     }
     
