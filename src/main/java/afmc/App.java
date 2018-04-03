@@ -1,19 +1,23 @@
 package afmc;
 
-import afmc.checker.Checker;
 import afmc.data.GameGraph;
 import afmc.parser.PGSolverParser;
-import java.io.BufferedReader;
+import afmc.checker.Checker;
+import afmc.checker.InOrder;
+import afmc.checker.Random;
+import afmc.checker.SelfLoopsFirst;
+import afmc.checker.LiftingStrategy;
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.BufferedReader;
 
 public class App {
     public static void main( String[] args )
     {
-        String liftingTechnique = ""; //default algorithm
+        String liftingTechnique = "self"; 
         String gameFilename = "";
-        System.out.println(args);
 
         // Parse the program arguments
         switch(args.length) {
@@ -44,7 +48,22 @@ public class App {
         Checker checker = new Checker(game);
         System.out.println(game.toString());
 
-        checker.check("arbitrary");
+        LiftingStrategy liftingStrategy;
+        switch(liftingTechnique) {
+        case "order":
+            liftingStrategy = new InOrder();
+        case "self":
+            liftingStrategy = new SelfLoopsFirst(); 
+            break;
+        case "random":
+            liftingStrategy = new Random(); 
+            break;
+        default:
+            System.out.println("Unknown lifting strategy provided.");
+            return;
+        }
+
+        checker.check(liftingStrategy);
 
         System.out.println(game.toString());
 

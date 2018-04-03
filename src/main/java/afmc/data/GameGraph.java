@@ -5,8 +5,11 @@
  */
 package afmc.data;
 
-import java.util.HashSet;
 import java.util.Set;
+import java.util.List;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.ArrayList;
 
 /**
  *
@@ -44,9 +47,15 @@ public class GameGraph {
         
         return result;
     }
+
+    public List<Node> getListOfNodes()
+    {
+        return new ArrayList<Node>(Arrays.asList(this.nodes));
+    }
     
     //Sets progress measure to all 0's for all nodes
-    public void initializeProgressMeasures(Integer maxPriority){
+    public void initializeProgressMeasures(Integer maxPriority)
+    {
         for(Integer i = 0; i < nodes.length; i++) {
             this.nodes[i].progressMeasure = new ProgressMeasure(maxPriority + 1);
         }

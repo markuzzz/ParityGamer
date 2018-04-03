@@ -10,15 +10,16 @@ import afmc.data.Transition;
 public class Checker {
     GameGraph game;
     ProgressMeasure maxProgressMeasure;
-    String liftingTechnique;
+    LiftingStrategy liftingStrategy;
     
     public Checker(GameGraph game) {
         this.game = game;
         computeMaxProgressMeasure();
     }
     
-    public void check(String liftingTechnique) {
-        this.liftingTechnique = liftingTechnique;
+    public void check(LiftingStrategy liftingStrategy) {
+        this.liftingStrategy = liftingStrategy;
+        this.liftingStrategy.addNodes(game.getListOfNodes());
         boolean fixedPointReached = false;
 
         int iteration = 0;
@@ -31,9 +32,10 @@ public class Checker {
             //System.out.println("Iteration: "+iteration);
             iteration++;
             
+            liftingStrategy.sort();
             //Check for every node if it can be lifted
-            for(Integer nodeIndex: this.game.getAllNodes()) { //note: in future choose order, for now this suffices
-                Node node = this.game.getNode(nodeIndex);
+            for(Node node: liftingStrategy) { //note: in future choose order, for now this suffices
+                //Node node = this.game.getNode(nodeIndex);
                 boolean nodeChange = lift(node);
                 if(nodeChange) {
                     fixedPointReached = false;
