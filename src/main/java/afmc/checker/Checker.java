@@ -11,6 +11,7 @@ public class Checker {
     GameGraph game;
     ProgressMeasure maxProgressMeasure;
     LiftingStrategy liftingStrategy;
+    private int iterationsDone = 0;
     
     public Checker(GameGraph game) {
         this.game = game;
@@ -22,7 +23,7 @@ public class Checker {
         this.liftingStrategy.addNodes(game.getListOfNodes());
         boolean fixedPointReached = false;
 
-        int iteration = 0;
+        this.iterationsDone = 0;
         
         //Until no node can be lifted we do not stop
         while(!fixedPointReached) {
@@ -30,7 +31,7 @@ public class Checker {
 
             //System.out.println(this.game);
             //System.out.println("Iteration: "+iteration);
-            iteration++;
+            this.iterationsDone++;
             
             liftingStrategy.sort();
             //Check for every node if it can be lifted
@@ -103,5 +104,9 @@ public class Checker {
         }
         
         this.maxProgressMeasure = new ProgressMeasure(tempMaxProgressMeasure);
+    }
+
+    public int getIterationsDone() {
+        return this.iterationsDone;
     }
 }

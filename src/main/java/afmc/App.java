@@ -65,6 +65,7 @@ public class App {
 
         checker.check(liftingStrategy);
 
+        System.out.println("Iterations performed: "+checker.getIterationsDone());
         System.out.println(game.toString());
 
         return;
