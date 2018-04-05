@@ -1,30 +1,38 @@
 package afmc.checker;
 
+import java.util.List;
 import java.util.Arrays;
+import java.util.stream.Collectors;
 
-import afmc.data.GameGraph;
+import afmc.Logger;
 import afmc.data.Node;
-import afmc.data.ProgressMeasure;
+import afmc.data.GameGraph;
 import afmc.data.Transition;
+import afmc.data.ProgressMeasure;
 
 public class Checker {
     GameGraph game;
     ProgressMeasure maxProgressMeasure;
     LiftingStrategy liftingStrategy;
+
     private int iterationsDone = 0;
+    private long elapsedTime = 0;
     
     public Checker(GameGraph game) {
         this.game = game;
         computeMaxProgressMeasure();
     }
     
-    public void check(LiftingStrategy liftingStrategy) {
+    public void check(LiftingStrategy liftingStrategy)
+    {
+        long startTime = System.currentTimeMillis();
+        this.iterationsDone = 0;
+
         this.liftingStrategy = liftingStrategy;
         this.liftingStrategy.addNodes(game.getListOfNodes());
         boolean fixedPointReached = false;
 
-        this.iterationsDone = 0;
-        
+
         //Until no node can be lifted we do not stop
         while(!fixedPointReached) {
             fixedPointReached = true;
@@ -34,15 +42,19 @@ public class Checker {
             this.iterationsDone++;
             
             liftingStrategy.sort();
+            List<String> nodeNames = liftingStrategy.getSortedNodes().stream().map(n -> n.name).collect(Collectors.toList());
+            Logger.debug("Sorted nodes: "+nodeNames);
             //Check for every node if it can be lifted
             for(Node node: liftingStrategy) { //note: in future choose order, for now this suffices
                 //Node node = this.game.getNode(nodeIndex);
                 boolean nodeChange = lift(node);
-                if(nodeChange) {
+                if (nodeChange) {
                     fixedPointReached = false;
                 }
             }
         }
+
+        this.elapsedTime = System.currentTimeMillis() - startTime;
     }
     
     /* Repeatedly lifts the progress measure of a node until it can no longer be
@@ -108,5 +120,9 @@ public class Checker {
 
     public int getIterationsDone() {
         return this.iterationsDone;
+    }
+
+    public long getElapsedTime() {
+        return this.elapsedTime;
     }
 }

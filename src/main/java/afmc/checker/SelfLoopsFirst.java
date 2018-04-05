@@ -8,7 +8,10 @@ import java.util.ArrayList;
 import java.util.ListIterator;
 import java.util.stream.IntStream;
 
-public class SelfLoopsFirst extends LiftingStrategy {
+public class SelfLoopsFirst extends LiftingStrategy
+{
+    public String name() { return "Selfloops first";}
+
     private boolean sorted = false;
 
     public void sort() {

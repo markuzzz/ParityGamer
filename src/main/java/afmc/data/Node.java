@@ -43,6 +43,11 @@ public class Node
         
         return result;
     }
+
+    public Boolean isEven()
+    {
+        return new Boolean(this.even);
+    }
     
     @Override
     public String toString()
@@ -64,5 +69,4 @@ public class Node
 
         return result; 
     }
-
 }

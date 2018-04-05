@@ -8,6 +8,8 @@ import java.util.Iterator;
 
 public abstract class LiftingStrategy implements Iterable<Node>
 {
+    public abstract String name();
+
     protected List<Node> nodes;
 
     protected List<Node> sortedNodes;
@@ -22,4 +24,8 @@ public abstract class LiftingStrategy implements Iterable<Node>
     }
 
     abstract public void sort();
+
+    public List<Node> getSortedNodes() {
+        return this.sortedNodes;
+    }
 }
