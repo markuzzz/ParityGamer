@@ -81,21 +81,24 @@ public class App
         }
 
         if (latexOutput) {
-            List<String> strategyNames = liftingStrategies.stream().map(s -> s.name()).collect(Collectors.toList());
-            System.out.println("strategies: "+strategyNames);
+            String strategyNames = liftingStrategies.stream().map(s -> s.name()).reduce("", (a,b) -> a+" & "+b);
+            System.out.println("Strategies "+strategyNames+" \\");
             System.out.print("n");
         }
 
         String winner = "";
         for (LiftingStrategy liftingStrategy : liftingStrategies) {
             // Parse the pgsolver file
+            long parseStartTime = System.currentTimeMillis();
             GameGraph game = (new PGSolverParser()).parse(pgsolver);
+            Logger.info("Parsing took: "+(System.currentTimeMillis() - parseStartTime)/1000.0);
+
             Checker checker = new Checker(game);
-            Logger.info(game.toString());
+            Logger.info(game);
 
             checker.check(liftingStrategy);
 
-            Logger.info(game.toString());
+            Logger.info(game);
 
             // Output the winner of the initial state
             Node initialNode = game.getNode(0);
