@@ -2,7 +2,6 @@ package afmc;
 
 import afmc.data.Node;
 import afmc.data.GameGraph;
-import afmc.data.ProgressMeasure;
 import afmc.parser.PGSolverParser;
 import afmc.checker.Checker;
 import afmc.checker.InOrder;
@@ -112,11 +111,9 @@ public class App
             if (latexOutput) {
                 System.out.print(" & "+checker.getElapsedTime()/1000.0+" s/ "+checker.getIterationsDone());
             } else {
-                System.out.println("Time taken "+checker.getElapsedTime()/1000.0+" s");
+                System.out.print("Time taken "+checker.getElapsedTime()/1000.0+" s");
                 System.out.println("Iterations performed: "+checker.getIterationsDone());
                 System.out.println("Lifts performed: "+checker.getLiftsPerformed());
-                System.out.println("Early max returns: "+ProgressMeasure.earlyMaxReturns);
-                System.out.println("Early min returns: "+ProgressMeasure.earlyMinReturns);
                 System.out.println(winner+" wins the inital state.");
             }
         }
