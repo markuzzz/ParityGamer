@@ -12,8 +12,6 @@ public class SelfLoopsFirst extends LiftingStrategy
 {
     public String name() { return "Selfloops first";}
 
-    private boolean sorted = false;
-
     public void sort() {
         if (this.sorted) {
             return;
@@ -26,7 +24,7 @@ public class SelfLoopsFirst extends LiftingStrategy
         // I accidentally used some java 8 features :o
         IntStream.range(0, this.nodes.size()).forEach(i -> {
             Node node = this.nodes.get(i);
-            if (this.isSelfLoopNode(i, node)) {
+            if (node.transitions.stream().map(n -> n.getTo() == i).reduce(false, (a,b) -> a || b)) {
                 selfLoopNodes.add(node);
             } else {
                 otherNodes.add(node);
@@ -36,15 +34,5 @@ public class SelfLoopsFirst extends LiftingStrategy
         selfLoopNodes.addAll(otherNodes);
 
         this.sortedNodes = selfLoopNodes;
-    }
-
-    private boolean isSelfLoopNode(int i, Node node) {
-        for (Transition t : node.transitions) {
-            if (t.getTo() == i) {
-                return true;
-            }
-        }
-
-        return false;
     }
 }

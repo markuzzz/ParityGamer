@@ -94,11 +94,11 @@ public class App
             Logger.info("Parsing took: "+(System.currentTimeMillis() - parseStartTime)/1000.0);
 
             Checker checker = new Checker(game);
-            Logger.info(game);
+            Logger.debug(game);
 
             checker.check(liftingStrategy);
 
-            Logger.info(game);
+            Logger.debug(game);
 
             // Output the winner of the initial state
             Node initialNode = game.getNode(0);
@@ -111,14 +111,17 @@ public class App
             if (latexOutput) {
                 System.out.print(" & "+checker.getElapsedTime()/1000.0+" s/ "+checker.getIterationsDone());
             } else {
+                System.out.print("Time taken "+checker.getElapsedTime()/1000.0+" s");
                 System.out.println("Iterations performed: "+checker.getIterationsDone());
+                System.out.println("Lifts performed: "+checker.getLiftsPerformed());
                 System.out.println(winner+" wins the inital state.");
             }
         }
-
-        System.out.println(" \\\\");
-        System.out.println(liftingTechnique+" & "+winner+" \\");
-
+        
+        if (latexOutput) {
+            System.out.println(" \\\\");
+            System.out.println(liftingTechnique+" & "+winner+" \\");
+        }
         return;
     }
 

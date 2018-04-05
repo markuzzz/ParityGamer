@@ -11,15 +11,18 @@ import afmc.data.GameGraph;
 import afmc.data.Transition;
 import afmc.data.ProgressMeasure;
 
-public class Checker {
+public class Checker
+{
     GameGraph game;
     ProgressMeasure maxProgressMeasure;
     LiftingStrategy liftingStrategy;
 
     private int iterationsDone = 0;
+    private int liftsPerformed = 0;
     private long elapsedTime = 0;
     
-    public Checker(GameGraph game) {
+    public Checker(GameGraph game)
+    {
         this.game = game;
         computeMaxProgressMeasure();
     }
@@ -33,7 +36,6 @@ public class Checker {
         this.liftingStrategy.addNodes(game.getListOfNodes());
         boolean fixedPointReached = false;
 
-
         //Until no node can be lifted we do not stop
         while(!fixedPointReached) {
             fixedPointReached = true;
@@ -42,7 +44,10 @@ public class Checker {
             //System.out.println("Iteration: "+iteration);
             this.iterationsDone++;
             
+            long sortStartTime = System.currentTimeMillis();
             liftingStrategy.sort();
+            Logger.info("Sorting took: "+(System.currentTimeMillis() - sortStartTime)/1000.0);
+
             Supplier<String> sortedNodesSupplier = () -> liftingStrategy.getSortedNodes().stream().map(n -> n.name).reduce("", (a, b) -> a+" "+b);
             Logger.debugLazy("Sorted nodes: ", sortedNodesSupplier);
 
@@ -65,7 +70,9 @@ public class Checker {
     /* Repeatedly lifts the progress measure of a node until it can no longer be
      * lifted. Returns whether at least one lift was possible.
     */
-    private boolean lift(Node node) {
+    private boolean lift(Node node)
+    {
+        this.liftsPerformed++;
         boolean changed = false;
         boolean fixedPointReached = false;
         
@@ -125,6 +132,10 @@ public class Checker {
 
     public int getIterationsDone() {
         return this.iterationsDone;
+    }
+
+    public int getLiftsPerformed() {
+        return this.liftsPerformed;
     }
 
     public long getElapsedTime() {

@@ -3,6 +3,7 @@ package afmc.checker;
 import afmc.data.Node;
 
 import java.util.List;
+import java.util.ArrayList;
 import java.lang.Iterable;
 import java.util.Iterator;
 
@@ -14,9 +15,12 @@ public abstract class LiftingStrategy implements Iterable<Node>
 
     protected List<Node> sortedNodes;
 
+    protected boolean sorted;
+
     public void addNodes(List<Node> nodes) {
         this.nodes = nodes;
-        this.sort(); // Rewind reinitializes the object
+        this.sortedNodes = new ArrayList();
+        this.sorted = false;
     }
 
     public Iterator<Node> iterator() {

@@ -7,10 +7,8 @@ public class OddFirst extends LiftingStrategy
 {
     public String name() { return "Odd First";}
 
-    private boolean sorted = false;
-
     public void sort() {
-        if (this.sorted) {
+        if (true == this.sorted) {
             return;
         }
         this.sorted = true;
