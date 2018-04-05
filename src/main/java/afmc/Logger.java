@@ -1,5 +1,7 @@
 package afmc;
 
+import java.util.function.Supplier;
+
 public final class Logger
 {
     private static boolean _debugEnabled;
@@ -8,6 +10,11 @@ public final class Logger
     public static void enableDebug()
     {
         _debugEnabled = true;
+    }
+
+    public static boolean debugEnabled()
+    {
+        return _debugEnabled;
     }
 
     public static void enableVerbose()
@@ -19,6 +26,13 @@ public final class Logger
     {
         if (_debugEnabled) {
             System.out.println("DEBUG: "+line);
+        }
+    }
+
+    public static void debugLazy(Object line, Supplier val)
+    {
+        if (_debugEnabled) {
+            System.out.println("DEBUG: "+line+val.get());
         }
     }
 

@@ -3,6 +3,7 @@ package afmc.checker;
 import java.util.List;
 import java.util.Arrays;
 import java.util.stream.Collectors;
+import java.util.function.Supplier;
 
 import afmc.Logger;
 import afmc.data.Node;
@@ -42,11 +43,15 @@ public class Checker {
             this.iterationsDone++;
             
             liftingStrategy.sort();
-            List<String> nodeNames = liftingStrategy.getSortedNodes().stream().map(n -> n.name).collect(Collectors.toList());
-            Logger.debug("Sorted nodes: "+nodeNames);
+            Supplier<String> sortedNodesSupplier = () -> liftingStrategy.getSortedNodes().stream().map(n -> n.name).reduce("", (a, b) -> a+" "+b);
+            Logger.debugLazy("Sorted nodes: ", sortedNodesSupplier);
+
             //Check for every node if it can be lifted
-            for(Node node: liftingStrategy) { //note: in future choose order, for now this suffices
-                //Node node = this.game.getNode(nodeIndex);
+            for (Node node: liftingStrategy) { //note: in future choose order, for now this suffices
+                if (node.progressMeasure.isTop()) {
+                    continue;
+                }
+
                 boolean nodeChange = lift(node);
                 if (nodeChange) {
                     fixedPointReached = false;

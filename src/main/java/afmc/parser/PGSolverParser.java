@@ -55,6 +55,9 @@ public class PGSolverParser {
                 // Strip the quotes from the name
                 name = name.substring(1, name.length()-1);
                 node.name = name;
+            } else {
+                // If no name is provided, use the index as name
+                node.name = Integer.toString(identifier);
             }
             
             if(priority > highestPrioritySeen) {
