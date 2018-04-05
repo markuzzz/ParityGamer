@@ -1,10 +1,12 @@
 package afmc;
 
+import afmc.data.Node;
 import afmc.data.GameGraph;
 import afmc.parser.PGSolverParser;
 import afmc.checker.Checker;
 import afmc.checker.InOrder;
 import afmc.checker.Random;
+import afmc.checker.OddFirst;
 import afmc.checker.SelfLoopsFirst;
 import afmc.checker.LiftingStrategy;
 
@@ -12,27 +14,37 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.BufferedReader;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.stream.Collectors;
 
-public class App {
-    public static void main( String[] args )
+public class App
+{
+    public static void main(String[] args)
     {
+        boolean latexOutput = false;
         String liftingTechnique = "self"; 
-        String gameFilename = "";
 
         // Parse the program arguments
-        switch(args.length) {
-        case 1:
-            gameFilename = args[0];
-            break;
-        case 3:
-            liftingTechnique = args[1];
-            gameFilename = args[2];
-            break;
-        default:
-            System.out.println("Incorrect arguments provided.");
-            System.out.println("usage: (-t technique)? <game>");
-            return;
+        for (int i = 0; i < args.length-1; i++) {
+            if ( args[i].equals("-v") ) {
+                Logger.enableVerbose();
+            } else if (args[i].equals("-d")) {
+                Logger.enableDebug();
+            } else if (args[i].equals("-l")) { // Enable latex output
+                latexOutput = true;
+            } else if (args[i].equals("-t")) {
+                i++;
+                liftingTechnique = args[i];
+            } else {
+                System.out.println("Incorrect arguments provided.");
+                System.out.println("usage: -v -d (-t technique)? <game>");
+                return;
+            }
         }
+
+        // The game is always the last argument.
+        String gameFilename = args[args.length-1];
 
         // Read the required data
         String pgsolver = "";
@@ -43,30 +55,66 @@ public class App {
             return;
         }
 
-        // Parse the pgsolver file
-        GameGraph game = (new PGSolverParser()).parse(pgsolver);
-        Checker checker = new Checker(game);
-        System.out.println(game.toString());
+        List<LiftingStrategy> liftingStrategies = new ArrayList();
 
-        LiftingStrategy liftingStrategy;
         switch(liftingTechnique) {
         case "order":
-            liftingStrategy = new InOrder();
+            liftingStrategies.add(new InOrder());
         case "self":
-            liftingStrategy = new SelfLoopsFirst(); 
+            liftingStrategies.add(new SelfLoopsFirst()); 
             break;
         case "random":
-            liftingStrategy = new Random(); 
+            liftingStrategies.add(new Random());
+            break;
+        case "odd":
+            liftingStrategies.add(new OddFirst());
+            break;
+        case "all":
+            liftingStrategies.add(new Random());
+            liftingStrategies.add(new InOrder());
+            liftingStrategies.add(new OddFirst());
+            liftingStrategies.add(new SelfLoopsFirst()); 
             break;
         default:
             System.out.println("Unknown lifting strategy provided.");
             return;
         }
 
-        checker.check(liftingStrategy);
+        if (latexOutput) {
+            List<String> strategyNames = liftingStrategies.stream().map(s -> s.name()).collect(Collectors.toList());
+            System.out.println("strategies: "+strategyNames);
+            System.out.print("n");
+        }
 
-        System.out.println("Iterations performed: "+checker.getIterationsDone());
-        System.out.println(game.toString());
+        String winner = "";
+        for (LiftingStrategy liftingStrategy : liftingStrategies) {
+            // Parse the pgsolver file
+            GameGraph game = (new PGSolverParser()).parse(pgsolver);
+            Checker checker = new Checker(game);
+            Logger.info(game.toString());
+
+            checker.check(liftingStrategy);
+
+            Logger.info(game.toString());
+
+            // Output the winner of the initial state
+            Node initialNode = game.getNode(0);
+            if (initialNode.progressMeasure.isTop()) {
+                winner = "odd";
+            } else {
+                winner = "even";
+            }
+
+            if (latexOutput) {
+                System.out.print(" & "+checker.getElapsedTime()/1000.0+" s/ "+checker.getIterationsDone());
+            } else {
+                System.out.println("Iterations performed: "+checker.getIterationsDone());
+                System.out.println(winner+" wins the inital state.");
+            }
+        }
+
+        System.out.println(" \\\\");
+        System.out.println(liftingTechnique+" & "+winner+" \\");
 
         return;
     }
