@@ -1,6 +1,7 @@
 package afmc.checker;
 
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 import java.util.function.Supplier;
@@ -98,14 +99,17 @@ public class Checker
         return changed;
     }
     
-    private ProgressMeasure[] progSuccesors(Node node) {
-        ProgressMeasure[] result = new ProgressMeasure[node.transitions.size()];
+    // Using supplier we can do lazy evaluation in the callee (max or min) so that we can stop when we have reached top in max.
+    private List<Supplier<ProgressMeasure>> progSuccesors(Node node)
+    {
+        List<Supplier<ProgressMeasure>> result = new ArrayList(node.transitions.size());
+
         for (int i = 0; i < node.transitions.size(); i++) {
             Node succNode = game.getNode(node.transitions.get(i).getTo());
             if (node.priority % 2 == 0) {
-                result[i] = ProgressMeasure.leastEqual(succNode.progressMeasure, node.priority);
+                result.add(() -> ProgressMeasure.leastEqual(succNode.progressMeasure, node.priority));
             } else {
-                result[i] = ProgressMeasure.leastGreater(succNode.progressMeasure, node.priority, this.maxProgressMeasure);
+                result.add(() -> ProgressMeasure.leastGreater(succNode.progressMeasure, node.priority, this.maxProgressMeasure));
             }
         }
 
@@ -116,11 +120,11 @@ public class Checker
     private void computeMaxProgressMeasure() {
         Integer[] tempMaxProgressMeasure = new Integer[game.getNode(0).progressMeasure.length];
         
-        for(int i = 0; i < tempMaxProgressMeasure.length; i++){
+        for (int i = 0; i < tempMaxProgressMeasure.length; i++){
             tempMaxProgressMeasure[i] = 0;
         }
         
-        for(Integer nodeIndex: game.getAllNodes()) {
+        for (Integer nodeIndex: game.getAllNodes()) {
             Node node = game.getNode(nodeIndex);
             if(node.priority % 2 == 1) {
                 tempMaxProgressMeasure[node.priority]++;
