@@ -10,7 +10,7 @@
                 <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
             </goals>
             <properties>
-                <exec.args>-classpath %classpath ${packageClassName} var/dining/dining_2.invariantly_inevitably_eat.gm</exec.args>
+                <exec.args>-classpath %classpath ${packageClassName} var/test/test.gm</exec.args>
                 <exec.executable>java</exec.executable>
                 <exec.workingdir>C:\Users\Mark\Documents\Mark\Schoolwork Mark\Algorithms for model checking\ParityGamer</exec.workingdir>
             </properties>
@@ -25,7 +25,7 @@
                 <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
             </goals>
             <properties>
-                <exec.args>-Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address} -classpath %classpath ${packageClassName} var/dining/dining_2.invariantly_inevitably_eat.gm</exec.args>
+                <exec.args>-Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address} -classpath %classpath ${packageClassName} var/test/test.gm</exec.args>
                 <exec.executable>java</exec.executable>
                 <jpda.listen>true</jpda.listen>
                 <exec.workingdir>C:\Users\Mark\Documents\Mark\Schoolwork Mark\Algorithms for model checking\ParityGamer</exec.workingdir>
@@ -41,9 +41,20 @@
                 <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
             </goals>
             <properties>
-                <exec.args>-classpath %classpath ${packageClassName} var/dining/dining_2.invariantly_inevitably_eat.gm</exec.args>
+                <exec.args>-classpath %classpath ${packageClassName} var/test/test.gm</exec.args>
                 <exec.executable>java</exec.executable>
                 <exec.workingdir>C:\Users\Mark\Documents\Mark\Schoolwork Mark\Algorithms for model checking\ParityGamer</exec.workingdir>
             </properties>
+        </action>
+        <action>
+            <actionName>build-with-dependencies</actionName>
+            <reactor>also-make</reactor>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>compile</goal>
+                <goal>assembly:single</goal>
+            </goals>
         </action>
     </actions>
