@@ -111,7 +111,7 @@ public class App
             if (latexOutput) {
                 System.out.print(" & "+checker.getElapsedTime()/1000.0+" s/ "+checker.getIterationsDone());
             } else {
-                System.out.print("Time taken "+checker.getElapsedTime()/1000.0+" s");
+                System.out.println("Time taken "+checker.getElapsedTime()/1000.0+" s");
                 System.out.println("Iterations performed: "+checker.getIterationsDone());
                 System.out.println("Lifts performed: "+checker.getLiftsPerformed());
                 System.out.println(winner+" wins the inital state.");

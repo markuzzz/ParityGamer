@@ -172,10 +172,11 @@ public class ProgressMeasure {
         }
 
         for (int i = 0; i < pm1.length; i++) {
-            if(pm1.progressMeasure[i] != pm2.progressMeasure[i]) {
+            if (!pm1.progressMeasure[i].equals(pm2.progressMeasure[i])) {
                 return false;
             }
         }
+
         return true;
     }
 }
