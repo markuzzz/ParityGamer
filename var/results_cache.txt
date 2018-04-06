@@ -1,0 +1,40 @@
+
+ ./cache/german_linear_2.infinite_run_no_access.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.022 s/ 22 & 0.0 s/ 21 & 0.016 s/ 21 & 0.016 s/ 20 \\
+all & even \
+
+ ./cache/german_linear_3.infinite_run_no_access.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.099 s/ 39 & 0.069 s/ 36 & 0.054 s/ 36 & 0.062 s/ 35 \\
+all & even \
+
+ ./cache/german_linear_4.infinite_run_no_access.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.561 s/ 55 & 0.317 s/ 49 & 0.335 s/ 49 & 0.308 s/ 48 \\
+all & even \
+
+ ./cache/german_linear_5.infinite_run_no_access.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 4.261 s/ 73 & 1.885 s/ 62 & 1.933 s/ 62 & 1.962 s/ 61 \\
+all & even \
+
+ ./cache/german_linear_2.invariantly_eventually_fair_shared_access.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.015 s/ 11 & 0.0 s/ 13 & 0.015 s/ 13 & 0.022 s/ 13 \\
+all & even \
+
+ ./cache/german_linear_3.invariantly_eventually_fair_shared_access.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.132 s/ 17 & 0.076 s/ 17 & 0.059 s/ 17 & 0.112 s/ 17 \\
+all & even \
+
+ ./cache/german_linear_4.invariantly_eventually_fair_shared_access.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.729 s/ 21 & 0.398 s/ 21 & 0.365 s/ 21 & 0.414 s/ 21 \\
+all & even \
+
+ ./cache/german_linear_5.invariantly_eventually_fair_shared_access.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 4.587 s/ 25 & 2.678 s/ 25 & 3.003 s/ 25 & 2.11 s/ 25 \\
+all & even \

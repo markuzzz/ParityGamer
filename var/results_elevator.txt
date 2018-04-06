@@ -1,0 +1,40 @@
+
+C:\Users\Mark\Documents\Mark\Schoolwork Mark\Algorithms for model checking\ParityGamer\var>java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./elevator/elevator1_2.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.0 s/ 21 & 0.0 s/ 22 & 0.015 s/ 20 & 0.019 s/ 22 \\
+all & even \
+
+C:\Users\Mark\Documents\Mark\Schoolwork Mark\Algorithms for model checking\ParityGamer\var>java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./elevator/elevator1_3.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.031 s/ 34 & 0.016 s/ 40 & 0.035 s/ 37 & 0.016 s/ 40 \\
+all & even \
+
+C:\Users\Mark\Documents\Mark\Schoolwork Mark\Algorithms for model checking\ParityGamer\var>java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./elevator/elevator1_4.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.134 s/ 52 & 0.1 s/ 65 & 0.1 s/ 61 & 0.1 s/ 65 \\
+all & even \
+
+C:\Users\Mark\Documents\Mark\Schoolwork Mark\Algorithms for model checking\ParityGamer\var>java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./elevator/elevator1_5.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 1.784 s/ 93 & 1.605 s/ 118 & 1.465 s/ 110 & 1.518 s/ 118 \\
+all & even \
+
+C:\Users\Mark\Documents\Mark\Schoolwork Mark\Algorithms for model checking\ParityGamer\var>java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./elevator/elevator1_6.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 53.163 s/ 122 & 48.585 s/ 162 & 48.942 s/ 152 & 48.758 s/ 162 \\
+all & even \
+
+C:\Users\Mark\Documents\Mark\Schoolwork Mark\Algorithms for model checking\ParityGamer\var>java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./elevator/elevator1_7.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 2852.939 s/ 169 & 2123.066 s/ 224 & 2069.308 s/ 208 & 2068.031 s/ 224 \\
+all & even \
+
+C:\Users\Mark\Documents\Mark\Schoolwork Mark\Algorithms for model checking\ParityGamer\var>java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./elevator/elevator2_2.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.015 s/ 72 & 0.015 s/ 96 & 0.0 s/ 83 & 0.0 s/ 96 \\
+all & odd \
+
+C:\Users\Mark\Documents\Mark\Schoolwork Mark\Algorithms for model checking\ParityGamer\var>java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./elevator/elevator2_3.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.085 s/ 225 & 0.062 s/ 341 & 0.065 s/ 341 & 0.053 s/ 341 \\
+all & odd \
