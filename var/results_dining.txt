@@ -1,0 +1,200 @@
+
+ ./dining/dining_2.invariantly_inevitably_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.0 s/ 5 & 0.0 s/ 5 & 0.0 s/ 5 & 0.005 s/ 4 \\
+all & odd \
+
+  ./dining/dining_3.invariantly_inevitably_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.004 s/ 5 & 0.0 s/ 5 & 0.0 s/ 5 & 0.016 s/ 4 \\
+all & odd \
+
+  ./dining/dining_4.invariantly_inevitably_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.0 s/ 5 & 0.001 s/ 6 & 0.0 s/ 6 & 0.016 s/ 5 \\
+all & odd \
+
+  ./dining/dining_5.invariantly_inevitably_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.016 s/ 5 & 0.0 s/ 6 & 0.016 s/ 6 & 0.005 s/ 6 \\
+all & odd \
+
+  ./dining/dining_6.invariantly_inevitably_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.022 s/ 6 & 0.031 s/ 8 & 0.015 s/ 8 & 0.028 s/ 8 \\
+all & odd \
+
+  ./dining/dining_7.invariantly_inevitably_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.08 s/ 6 & 0.053 s/ 9 & 0.056 s/ 9 & 0.059 s/ 9 \\
+all & odd \
+
+  ./dining/dining_8.invariantly_inevitably_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.194 s/ 6 & 0.219 s/ 11 & 0.17 s/ 11 & 0.223 s/ 11 \\
+all & odd \
+
+  ./dining/dining_9.invariantly_inevitably_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.673 s/ 6 & 0.691 s/ 12 & 0.678 s/ 12 & 0.701 s/ 12 \\
+all & odd \
+
+  ./dining/dining_10.invariantly_inevitably_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 2.575 s/ 6 & 4.333 s/ 14 & 2.994 s/ 14 & 4.681 s/ 14 \\
+all & odd \
+
+  ./dining/dining_11.invariantly_inevitably_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 9.436 s/ 6 & 19.839 s/ 15 & 12.857 s/ 15 & 18.951 s/ 15 \\
+all & odd \
+
+  ./dining/dining_2.invariantly_plato_starves.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.002 s/ 5 & 0.001 s/ 8 & 0.002 s/ 7 & 0.005 s/ 7 \\
+all & odd \
+
+  ./dining/dining_3.invariantly_plato_starves.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.004 s/ 6 & 0.001 s/ 9 & 0.002 s/ 8 & 0.006 s/ 8 \\
+all & odd \
+
+  ./dining/dining_4.invariantly_plato_starves.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.0 s/ 7 & 0.0 s/ 12 & 0.015 s/ 11 & 0.0 s/ 11 \\
+all & odd \
+
+  ./dining/dining_5.invariantly_plato_starves.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.002 s/ 7 & 0.0 s/ 13 & 0.0 s/ 12 & 0.016 s/ 12 \\
+all & odd \
+
+  ./dining/dining_6.invariantly_plato_starves.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.015 s/ 7 & 0.022 s/ 16 & 0.015 s/ 15 & 0.038 s/ 15 \\
+all & odd \
+
+  ./dining/dining_7.invariantly_plato_starves.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.065 s/ 8 & 0.046 s/ 17 & 0.085 s/ 16 & 0.09 s/ 16 \\
+all & odd \
+
+  ./dining/dining_8.invariantly_plato_starves.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.201 s/ 8 & 0.269 s/ 20 & 0.275 s/ 19 & 0.327 s/ 19 \\
+all & odd \
+
+  ./dining/dining_9.invariantly_plato_starves.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.776 s/ 8 & 0.907 s/ 21 & 0.952 s/ 20 & 0.895 s/ 20 \\
+all & odd \
+
+  ./dining/dining_10.invariantly_plato_starves.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 2.992 s/ 8 & 3.626 s/ 24 & 4.202 s/ 23 & 4.138 s/ 23 \\
+all & odd \
+
+  ./dining/dining_11.invariantly_plato_starves.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 15.023 s/ 9 & 22.001 s/ 25 & 19.42 s/ 24 & 17.101 s/ 24 \\
+all & odd \
+
+  ./dining/dining_2.invariantly_possibly_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.003 s/ 6 & 0.002 s/ 8 & 0.003 s/ 8 & 0.006 s/ 7 \\
+all & odd \
+
+  ./dining/dining_3.invariantly_possibly_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.0 s/ 9 & 0.016 s/ 10 & 0.0 s/ 10 & 0.016 s/ 10 \\
+all & odd \
+
+  ./dining/dining_4.invariantly_possibly_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.017 s/ 10 & 0.0 s/ 13 & 0.015 s/ 13 & 0.016 s/ 13 \\
+all & odd \
+
+  ./dining/dining_5.invariantly_possibly_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.016 s/ 14 & 0.017 s/ 16 & 0.016 s/ 16 & 0.031 s/ 16 \\
+all & odd \
+
+  ./dining/dining_6.invariantly_possibly_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.062 s/ 17 & 0.047 s/ 19 & 0.037 s/ 19 & 0.07 s/ 19 \\
+all & odd \
+
+  ./dining/dining_7.invariantly_possibly_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.2 s/ 20 & 0.132 s/ 22 & 0.138 s/ 22 & 0.201 s/ 22 \\
+all & odd \
+
+  ./dining/dining_8.invariantly_possibly_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.706 s/ 26 & 0.521 s/ 25 & 0.504 s/ 25 & 0.628 s/ 25 \\
+all & odd \
+
+  ./dining/dining_9.invariantly_possibly_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 3.154 s/ 25 & 2.74 s/ 28 & 2.403 s/ 28 & 2.293 s/ 28 \\
+all & odd \
+
+  ./dining/dining_10.invariantly_possibly_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 13.76 s/ 28 & 8.914 s/ 31 & 9.005 s/ 31 & 13.234 s/ 31 \\
+all & odd \
+
+  ./dining/dining_11.invariantly_possibly_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 68.178 s/ 32 & 41.947 s/ 34 & 45.081 s/ 34 & 42.849 s/ 34 \\
+all & odd \
+
+  ./dining/dining_2.plato_infinitely_often_can_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.003 s/ 5 & 0.001 s/ 7 & 0.002 s/ 7 & 0.006 s/ 7 \\
+all & even \
+
+  ./dining/dining_3.plato_infinitely_often_can_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.006 s/ 9 & 0.001 s/ 10 & 0.002 s/ 10 & 0.006 s/ 10 \\
+all & even \
+
+  ./dining/dining_4.plato_infinitely_often_can_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.015 s/ 12 & 0.0 s/ 13 & 0.0 s/ 13 & 0.022 s/ 13 \\
+all & even \
+
+  ./dining/dining_5.plato_infinitely_often_can_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.004 s/ 14 & 0.016 s/ 16 & 0.015 s/ 16 & 0.032 s/ 16 \\
+all & even \
+
+  ./dining/dining_6.plato_infinitely_often_can_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.047 s/ 18 & 0.036 s/ 19 & 0.031 s/ 19 & 0.032 s/ 19 \\
+all & even \
+
+  ./dining/dining_7.plato_infinitely_often_can_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.137 s/ 20 & 0.069 s/ 22 & 0.1 s/ 22 & 0.1 s/ 22 \\
+all & even \
+
+  ./dining/dining_8.plato_infinitely_often_can_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 0.481 s/ 23 & 0.406 s/ 25 & 0.356 s/ 25 & 0.499 s/ 25 \\
+all & even \
+
+  ./dining/dining_9.plato_infinitely_often_can_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 2.372 s/ 25 & 1.653 s/ 28 & 1.687 s/ 28 & 2.029 s/ 28 \\
+all & even \
+
+  ./dining/dining_10.plato_infinitely_often_can_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 12.651 s/ 30 & 6.467 s/ 31 & 6.389 s/ 31 & 6.74 s/ 31 \\
+all & even \
+
+  ./dining/dining_11.plato_infinitely_often_can_eat.gm
+Strategies  & Random & In order & Odd First & Selfloops first \
+n & 54.003 s/ 33 & 25.669 s/ 34 & 25.46 s/ 34 & 32.859 s/ 34 \\
+all & even \

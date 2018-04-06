@@ -1,41 +1,41 @@
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  -l -t all ./dining/dining_2.invariantly_inevitably_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_3.invariantly_inevitably_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_4.invariantly_inevitably_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_5.invariantly_inevitably_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_6.invariantly_inevitably_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_7.invariantly_inevitably_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_8.invariantly_inevitably_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_9.invariantly_inevitably_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_10.invariantly_inevitably_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_11.invariantly_inevitably_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_2.invariantly_plato_starves.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_3.invariantly_plato_starves.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_4.invariantly_plato_starves.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_5.invariantly_plato_starves.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_6.invariantly_plato_starves.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_7.invariantly_plato_starves.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_8.invariantly_plato_starves.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_9.invariantly_plato_starves.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_10.invariantly_plato_starves.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_11.invariantly_plato_starves.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_2.invariantly_possibly_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_3.invariantly_possibly_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_4.invariantly_possibly_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_5.invariantly_possibly_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_6.invariantly_possibly_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_7.invariantly_possibly_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_8.invariantly_possibly_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_9.invariantly_possibly_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_10.invariantly_possibly_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_11.invariantly_possibly_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_2.plato_infinitely_often_can_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_3.plato_infinitely_often_can_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_4.plato_infinitely_often_can_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_5.plato_infinitely_often_can_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_6.plato_infinitely_often_can_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_7.plato_infinitely_often_can_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_8.plato_infinitely_often_can_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_9.plato_infinitely_often_can_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_10.plato_infinitely_often_can_eat.gm
-java -jar .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_11.plato_infinitely_often_can_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all ./dining/dining_2.invariantly_inevitably_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_3.invariantly_inevitably_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_4.invariantly_inevitably_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_5.invariantly_inevitably_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_6.invariantly_inevitably_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_7.invariantly_inevitably_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_8.invariantly_inevitably_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_9.invariantly_inevitably_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_10.invariantly_inevitably_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_11.invariantly_inevitably_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_2.invariantly_plato_starves.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_3.invariantly_plato_starves.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_4.invariantly_plato_starves.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_5.invariantly_plato_starves.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_6.invariantly_plato_starves.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_7.invariantly_plato_starves.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_8.invariantly_plato_starves.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_9.invariantly_plato_starves.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_10.invariantly_plato_starves.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_11.invariantly_plato_starves.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_2.invariantly_possibly_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_3.invariantly_possibly_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_4.invariantly_possibly_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_5.invariantly_possibly_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_6.invariantly_possibly_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_7.invariantly_possibly_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_8.invariantly_possibly_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_9.invariantly_possibly_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_10.invariantly_possibly_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_11.invariantly_possibly_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_2.plato_infinitely_often_can_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_3.plato_infinitely_often_can_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_4.plato_infinitely_often_can_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_5.plato_infinitely_often_can_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_6.plato_infinitely_often_can_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_7.plato_infinitely_often_can_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_8.plato_infinitely_often_can_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_9.plato_infinitely_often_can_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_10.plato_infinitely_often_can_eat.gm
+java -jar -Xmx4096m .\paritygamer-1.0-SNAPSHOT-jar-with-dependencies.jar -l -t all  ./dining/dining_11.plato_infinitely_often_can_eat.gm
 PAUSE
