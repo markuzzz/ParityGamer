@@ -65,18 +65,7 @@ public class ProgressMeasure
     }
 
     public static ProgressMeasure min(ProgressMeasure[] arrayProgressMeasures) {
-        if (1 == arrayProgressMeasures.length) {
-            return arrayProgressMeasures[0];
-        }
-
-        ProgressMeasure result = arrayProgressMeasures[0];
-        for (int i = 0; i < arrayProgressMeasures.length; i++) {
-            if (0 > compare(arrayProgressMeasures[i], result, result.length)) {
-                result = arrayProgressMeasures[i];
-            }
-        }
-        return result;
-        //return Collections.min(Arrays.asList(arrayProgressMeasures), (pm1, pm2) -> compare(pm1, pm2, pm1.length));
+        return Collections.min(Arrays.asList(arrayProgressMeasures), (pm1, pm2) -> compare(pm1, pm2, pm1.length));
     }
 
     public static ProgressMeasure max(ProgressMeasure[] arrayProgressMeasures) {
