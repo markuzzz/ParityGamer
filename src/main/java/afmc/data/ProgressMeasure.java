@@ -1,19 +1,21 @@
 package afmc.data;
 
-public class ProgressMeasure {
-    private Integer[] progressMeasure;
-    private boolean top = false;
-    public Integer length;
+import java.util.Arrays;
+import java.util.Collections;
 
-    public ProgressMeasure(Integer length) {
-        this.progressMeasure = new Integer[length];
-        for(Integer j = 0; j < length; j++) {
-            this.progressMeasure[j] = 0;
-        }
+public class ProgressMeasure
+{
+    private int[] progressMeasure;
+    private boolean top = false;
+    public int length;
+
+    public ProgressMeasure(int length) {
+        // Should be initialized to zero, https://docs.oracle.com/javase/specs/jls/se7/html/jls-4.html#jls-4.12.5
+        this.progressMeasure = new int[length];
         this.length = length;
     }
 
-    public ProgressMeasure(Integer[] progressMeasure) {
+    public ProgressMeasure(int[] progressMeasure) {
         this.progressMeasure = progressMeasure;
         this.length = progressMeasure.length;
     }
@@ -26,15 +28,15 @@ public class ProgressMeasure {
         }
     }
 
-    public Integer[] getProgressMeasure() {
+    public int[] getProgressMeasure() {
         return this.progressMeasure;
     }
 
-    public Integer getProgress(Integer index) {
+    public int getProgress(int index) {
         return this.progressMeasure[index];
     }
 
-    public void updateProgress(Integer index, Integer newValue) {
+    public void updateProgress(int index, int newValue) {
         this.progressMeasure[index] = newValue;
     }
 
@@ -68,29 +70,20 @@ public class ProgressMeasure {
         }
 
         ProgressMeasure result = arrayProgressMeasures[0];
-        for(ProgressMeasure progressMeasure: arrayProgressMeasures) {
-            if(isSmallerThanOrEqual(progressMeasure, result, result.length)) {
-                result = progressMeasure;
+        for (int i = 0; i < arrayProgressMeasures.length; i++) {
+            if (0 > compare(arrayProgressMeasures[i], result, result.length)) {
+                result = arrayProgressMeasures[i];
             }
         }
         return result;
+        //return Collections.min(Arrays.asList(arrayProgressMeasures), (pm1, pm2) -> compare(pm1, pm2, pm1.length));
     }
 
     public static ProgressMeasure max(ProgressMeasure[] arrayProgressMeasures) {
-        if (1 == arrayProgressMeasures.length) {
-            return arrayProgressMeasures[0];
-        }
-
-        ProgressMeasure result = arrayProgressMeasures[0];
-        for(ProgressMeasure progressMeasure: arrayProgressMeasures) {
-            if(isLargerThanOrEqual(progressMeasure, result, result.length)) {
-                result = progressMeasure;
-            }
-        }
-        return result;
+        return Collections.max(Arrays.asList(arrayProgressMeasures), (pm1, pm2) -> compare(pm1, pm2, pm1.length));
     }
 
-    public static ProgressMeasure leastEqual(ProgressMeasure pm, Integer upTo) {
+    public static ProgressMeasure leastEqual(ProgressMeasure pm, int upTo) {
         // Top has the lowest order
         if (pm.isTop()) {
             return new ProgressMeasure(pm);
@@ -104,14 +97,14 @@ public class ProgressMeasure {
         return result;
     }
 
-    public static ProgressMeasure leastGreater(ProgressMeasure pm, Integer upTo, ProgressMeasure max) {
+    public static ProgressMeasure leastGreater(ProgressMeasure pm, int upTo, ProgressMeasure max) {
         ProgressMeasure leastEqual = leastEqual(pm, upTo);
         ProgressMeasure increased = increaseProgress(leastEqual, max, upTo);
 
         return increased;
     }
 
-    private static ProgressMeasure increaseProgress(ProgressMeasure pm, ProgressMeasure max, Integer upTo) {
+    private static ProgressMeasure increaseProgress(ProgressMeasure pm, ProgressMeasure max, int upTo) {
         if (pm.isTop()) {
             return pm;
         }
@@ -136,47 +129,33 @@ public class ProgressMeasure {
         return pm;
     }
 
-    public static boolean isSmallerThanOrEqual(ProgressMeasure pm1, ProgressMeasure pm2, Integer upTo) {
-        if(pm1.top) {return false;}
-        if(pm2.top) {return true;}
-        for(int i = 0; i < upTo; i++) {
-            if(pm1.progressMeasure[i] > pm2.progressMeasure[i]) {
-                return false;
-            }
-            if(pm1.progressMeasure[i] < pm2.progressMeasure[i]) {
-                return true;
-            }
+    public static int compare(ProgressMeasure pm1, ProgressMeasure pm2, int upTo) {
+        if (pm1.isTop() && pm2.isTop()) {
+            return 0;
+        } else if(pm1.top) {
+            return 1;
+        } else if(pm2.top) {
+            return -1;
         }
-        return true;
-    }
 
-    public static boolean isLargerThanOrEqual(ProgressMeasure pm1, ProgressMeasure pm2, Integer upTo) {
-        if(pm1.top) {return true;}
-        if(pm2.top) {return false;}
-        for(int i = 0; i < upTo; i++) {
-            if(pm1.progressMeasure[i] < pm2.progressMeasure[i]) {
-                return false;
+        for (int i = 0; i < upTo; i++) {
+            if (pm1.progressMeasure[i] < pm2.progressMeasure[i]) {
+                return -1;
             }
-            if(pm1.progressMeasure[i] > pm2.progressMeasure[i]) {
-                return true;
+            if (pm1.progressMeasure[i] > pm2.progressMeasure[i]) {
+                return 1;
             }
         }
-        return true;
+        return 0;
     }
 
     public static boolean isEqual(ProgressMeasure pm1, ProgressMeasure pm2) {
         if (pm1.isTop() && pm2.isTop()) {
             return true;
         } else if (pm1.isTop() || pm2.isTop()) {
-            return false; 
+            return false;
         }
 
-        for (int i = 0; i < pm1.length; i++) {
-            if (!pm1.progressMeasure[i].equals(pm2.progressMeasure[i])) {
-                return false;
-            }
-        }
-
-        return true;
+        return Arrays.equals(pm1.progressMeasure, pm2.progressMeasure);
     }
 }

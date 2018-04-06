@@ -114,11 +114,8 @@ public class Checker
     
     //Computes and sets the max possible progress measure (counts occurence of priorities in graph)
     private void computeMaxProgressMeasure() {
-        Integer[] tempMaxProgressMeasure = new Integer[game.getNode(0).progressMeasure.length];
-        
-        for(int i = 0; i < tempMaxProgressMeasure.length; i++){
-            tempMaxProgressMeasure[i] = 0;
-        }
+        // Should be initialized to zero
+        int[] tempMaxProgressMeasure = new int[game.getNode(0).progressMeasure.length];
         
         for(Integer nodeIndex: game.getAllNodes()) {
             Node node = game.getNode(nodeIndex);
