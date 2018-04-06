@@ -47,3 +47,5 @@ all & odd \
   ./elevator/elevator2_5.gm
 Strategies  & Random & In order & Odd First & Selfloops first \
 n & 52.76 s/ 5552 & 65.679 s/ 10467 & 64.87 s/ 10466 & 66.981 s/ 10467 \\
+
+6 & 4004.879 s/ 36516 & 4150.241 s/ 73740 & 4090.933 s/ 73739 & 4028.73 s/ 73740 \\
